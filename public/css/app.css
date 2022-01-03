@@ -1,12 +1,12 @@
-@import "./variables";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Lato", sans-serif;
-  color: $dark;
+  color: #232323;
   height: 1000px;
   box-sizing: border-box;
 }
@@ -15,17 +15,18 @@ nav li:last-child a {
   color: white;
   font: 400;
   font-size: 22px;
-  &:hover {
-    background: $primary_hover;
-    color: white;
-  }
-  background: $primary;
+  background: #FE5F1E;
 }
+nav li:last-child a:hover {
+  background: #b23301;
+  color: white;
+}
+
 nav li a {
-  transition: $smooth;
-  &:hover {
-    color: $primary;
-  }
+  transition: all 0.3s ease-in-out;
+}
+nav li a:hover {
+  color: #FE5F1E;
 }
 
 nav img {
@@ -34,18 +35,18 @@ nav img {
   height: 7rem;
   position: absolute;
   cursor: pointer;
-  top:-14px;
+  top: -14px;
   left: 20px;
 }
 
-//SECTION-HERO
 .hero-section {
-  background: $secondary;
-  height:90vh;
+  background: #F8F8F8;
+  height: 90vh;
   margin-top: 10px;
 }
+
 .min-title {
-  background: $secondary;
+  background: #F8F8F8;
 }
 
 .section-hero-img {
@@ -54,26 +55,26 @@ nav img {
   justify-content: center;
   height: 80vh;
 }
+
 .section-hero-img img {
   height: 60%;
   width: 60%;
   font-weight: bold;
 }
-.add-to-cart {
-  color: $primary;
-  transition: $smooth;
-    border: 1px solid $primary;
 
-  &:hover {
-    background: $primary_hover;
-    border-color: $pure;
-    color: $pure;
-  }
+.add-to-cart {
+  color: #FE5F1E;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #FE5F1E;
+}
+.add-to-cart:hover {
+  background: #b23301;
+  border-color: #fff;
+  color: #fff;
 }
 
-.store-item{
-    box-shadow: 0 1px 2px 0 rgb(48 48 48 / 30%), 0 1px 3px 1px rgb(48 48 48 / 15%);
-    background: white;
-    border-radius: 4px;
-    
+.store-item {
+  box-shadow: 0 1px 2px 0 rgba(48, 48, 48, 0.3), 0 1px 3px 1px rgba(48, 48, 48, 0.15);
+  background: white;
+  border-radius: 4px;
 }
