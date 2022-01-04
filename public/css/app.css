@@ -4,10 +4,26 @@
   box-sizing: border-box;
 }
 
+.btn-primary {
+  background: #FE5F1E;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  letter-spacing: 1.3px;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background: #b23301;
+}
+
+input {
+  outline: none;
+}
+
 body {
   font-family: "Lato", sans-serif;
   color: #232323;
-  height: 1000px;
   box-sizing: border-box;
 }
 
@@ -29,6 +45,10 @@ nav li a:hover {
   color: #FE5F1E;
 }
 
+.section {
+  background: #F8F8F8;
+}
+
 nav img {
   margin-left: 20px;
   width: 7rem;
@@ -37,6 +57,19 @@ nav img {
   cursor: pointer;
   top: -14px;
   left: 20px;
+}
+
+.order-btn {
+  background: #FE5F1E;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  letter-spacing: 1.3px;
+  outline: none;
+  font-weight: 600;
+}
+.order-btn:hover {
+  background: #b23301;
 }
 
 .hero-section {
@@ -77,4 +110,29 @@ nav img {
   box-shadow: 0 1px 2px 0 rgba(48, 48, 48, 0.3), 0 1px 3px 1px rgba(48, 48, 48, 0.15);
   background: white;
   border-radius: 4px;
+}
+
+.cart {
+  background: #F8F8F8;
+  padding: 20px;
+  height: 100vh;
+}
+
+hr {
+  color: #bfbfbf;
+}
+
+.login, .register {
+  background: #F8F8F8;
+  height: calc(100vh - 85px);
+}
+.login a, .register a {
+  color: #FE5F1E;
+}
+.login a:hover, .register a:hover {
+  color: #b23301;
+}
+
+.cart-color, .amount {
+  color: #FE5F1E;
 }
