@@ -1,23 +1,26 @@
 @import "./variables";
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/mint.scss";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.btn-primary{
-    background: $primary;
-    color: $pure;
-    outline: none;
-    border: none;
-    border-radius: 20px;
-    letter-spacing: 1.3px;
-    font-weight: 600;
-    &:hover{
-      background: $primary_hover;
-    }
-  }
 
-input{
+.btn-primary {
+  background: $primary;
+  color: $pure;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  letter-spacing: 1.3px;
+  font-weight: 600;
+  &:hover {
+    background: $primary_hover;
+  }
+}
+
+input {
   outline: none;
 }
 body {
@@ -43,7 +46,7 @@ nav li a {
     color: $primary;
   }
 }
-.section{
+.section {
   background: $secondary;
 }
 nav img {
@@ -57,7 +60,9 @@ nav img {
 }
 
 //SECTION-HERO
-.order-btn{
+.order-btn {
+  scroll-behavior: smooth;
+
   background: $primary;
   color: $pure;
   border: none;
@@ -65,7 +70,7 @@ nav img {
   letter-spacing: 1.3px;
   outline: none;
   font-weight: 600;
-  &:hover{
+  &:hover {
     background: $primary_hover;
   }
 }
@@ -93,11 +98,15 @@ nav img {
   color: $primary;
   transition: $smooth;
   border: 1px solid $primary;
+  outline: none;
 
   &:hover {
     background: $primary_hover;
     border-color: $pure;
     color: $pure;
+  }
+  &:focus {
+    outline: none;
   }
 }
 
@@ -109,24 +118,37 @@ nav img {
 
 //empty cart
 
-.cart{
+.cart {
   background: $secondary;
   padding: 20px;
-  height: 100vh;
+  height: fit-content;
 }
-hr{
+hr {
   color: rgb(191, 191, 191);
 }
-.login , .register{
+.login,
+.register {
   background: $secondary;
   height: calc(100vh - 85px);
-  a{
-    &:hover{
+  a {
+    &:hover {
       color: $primary_hover;
     }
     color: $primary;
   }
 }
-.cart-color,.amount{
+.cart-color,
+.amount {
   color: $primary;
+}
+
+//empty cart section
+
+.empty-cart {
+  height: calc(100vh - 86px);
+  background: $secondary;
+}
+.noty_theme_mint {
+  border-radius: 50px !important;
+  padding-right: 5px !important;
 }
