@@ -434,3 +434,14 @@ hr {
   border-radius: 50px !important;
   padding-right: 5px !important;
 }
+
+button[type=submit] {
+  background-color: #FE5F1E;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.9;
+}

@@ -6,11 +6,11 @@ const mongoose = require("mongoose");
 const expressLayout = require("express-Ejs-layouts");
 const app = express();
 const flash = require("express-flash");
-var session = require("express-session");
+const session = require("express-session");
+const passport = require("passport");
 var MongoDBStore = require("connect-mongodb-session")(session);
 const PORT = process.env.PORT || 3000;
 
-app.use(flash());
 // Database Connection
 const MONGO_URL =
   "mongodb+srv://santosh2:admin2@apicluster.qw8yl.mongodb.net/onlineStore?retryWrites=true&w=majority";
@@ -26,10 +26,6 @@ var store = new MongoDBStore({
   collection: "mySessions",
 });
 
-// Catch errors
-store.on("error", function (error) {
-  console.log(error);
-});
 // session config
 app.use(
   session({
@@ -41,21 +37,38 @@ app.use(
   })
 );
 
-app.use(express.json());
-//assets
-app.use(express.static("public"));
+// passport config
+const passportInit = require("./app/config/Passport");
+passportInit(passport);
+app.use(passport.initialize())
+app.use(passport.session())
 
+
+
+// Catch errors
+store.on("error", function (error) {
+  console.log(error);
+});
+
+app.use(flash());
+//assets
+
+app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+//global middlewares
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  res.locals.user =req.user
+  next();
+});
 //set Template Engine
 app.use(expressLayout);
 app.set("views", path.join(__dirname, "/resources/views"));
 app.set("view engine", "ejs");
 
-//global middleware
-app.use((req, res, next) => {
-  res.locals.session = req.session;
-  next();
-});
-
 //Routes
 require("./routes/web")(app);
+
 app.listen(PORT, () => console.log(`server started at ${PORT}`));
