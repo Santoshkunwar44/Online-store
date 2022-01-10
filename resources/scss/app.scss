@@ -46,7 +46,7 @@ nav li a {
     color: $primary;
   }
 }
-.section {
+.section,.OrderTrackerWrapper {
   background: $secondary;
 }
 nav img {
@@ -161,4 +161,124 @@ button[type="submit"] {
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.9 ;
+}
+
+//customer orders
+
+.link{
+  color: $primary;
+  
+}
+//order tracker page
+
+.OrderTrackerWrapper{
+  background-color: $secondary;
+  min-height: calc(100vh - 86px);
+}
+
+.status-box{
+  padding-top: 60px;
+}
+
+.status-box span{
+  position: relative;
+  padding-left: 30px;
+}
+.status-box ul{
+
+  margin-left: 70px;
+
+}
+.status-box ul li span:after{
+  content: "";
+  position: absolute;
+  background-color:$dark;
+  width: 10px;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-5px);
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-box ul li span:before{
+
+  font-weight: 600;
+  font-family: "Line Awesome Free";
+  font-size: 50px;
+  color: inherit;
+  position: absolute;
+  left: -90px;
+
+}
+.status-box ul li:nth-child(1) span::before{
+  content: "\f46c";
+}
+.status-box ul li:nth-child(2) span::before{
+  content: "\f560";
+}
+.status-box ul li:nth-child(3) span::before{
+  content: "\f818";
+}
+.status-box ul li:nth-child(4) span::before{
+  content: "\f0d1 ";
+}
+.status-box ul li:nth-child(5) span::before{
+  content: "\f582";
+}
+
+.status-box ul li {
+  position: relative;
+
+}
+.status-box ul li:nth-child(5) span::after{
+box-shadow: 0px 10px 0px 20px  $secondary;
+}
+
+.status-box ul li::before{
+  position: absolute;
+  content: "";
+  height: 70%;
+  width: 2px;
+  background-color: $dark;
+  left: -10px;
+  top: 25px;  
+
+
+}
+
+  //line grey
+ .status-box ul li.step-completed::before{
+  background-color: $gray;
+
+}
+
+
+// dot grey
+.status-box ul li.step-completed span{
+color: $gray;
+}
+
+// text  grey
+.status-box ul li.step-completed span::after{
+background-color: $gray;
+}
+
+
+// current status  
+// text  completed
+.status-box ul li.current-step span::after{
+  background-color: $primary;
+  }
+
+  // dot completed
+  .status-box ul li.current-step span{
+  color: $primary;
+  }
+
+
+    //line completed
+ .status-box ul li.current-step::before{
+  background-color: $primary;
+
 }

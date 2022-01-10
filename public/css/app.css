@@ -322,7 +322,7 @@ nav li a:hover {
   color: #FE5F1E;
 }
 
-.section {
+.section, .OrderTrackerWrapper {
   background: #F8F8F8;
 }
 
@@ -444,4 +444,109 @@ button[type=submit] {
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.9;
+}
+
+.link {
+  color: #FE5F1E;
+}
+
+.OrderTrackerWrapper {
+  background-color: #F8F8F8;
+  min-height: calc(100vh - 86px);
+}
+
+.status-box {
+  padding-top: 60px;
+}
+
+.status-box span {
+  position: relative;
+  padding-left: 30px;
+}
+
+.status-box ul {
+  margin-left: 70px;
+}
+
+.status-box ul li span:after {
+  content: "";
+  position: absolute;
+  background-color: #232323;
+  width: 10px;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-5px);
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-box ul li span:before {
+  font-weight: 600;
+  font-family: "Line Awesome Free";
+  font-size: 50px;
+  color: inherit;
+  position: absolute;
+  left: -90px;
+}
+
+.status-box ul li:nth-child(1) span::before {
+  content: "\f46c";
+}
+
+.status-box ul li:nth-child(2) span::before {
+  content: "\f560";
+}
+
+.status-box ul li:nth-child(3) span::before {
+  content: "\f818";
+}
+
+.status-box ul li:nth-child(4) span::before {
+  content: "\f0d1";
+}
+
+.status-box ul li:nth-child(5) span::before {
+  content: "\f582";
+}
+
+.status-box ul li {
+  position: relative;
+}
+
+.status-box ul li:nth-child(5) span::after {
+  box-shadow: 0px 10px 0px 20px #F8F8F8;
+}
+
+.status-box ul li::before {
+  position: absolute;
+  content: "";
+  height: 70%;
+  width: 2px;
+  background-color: #232323;
+  left: -10px;
+  top: 25px;
+}
+
+.status-box ul li.step-completed::before {
+  background-color: #ccc;
+}
+
+.status-box ul li.step-completed span {
+  color: #ccc;
+}
+
+.status-box ul li.step-completed span::after {
+  background-color: #ccc;
+}
+
+.status-box ul li.current-step span::after {
+  background-color: #FE5F1E;
+}
+
+.status-box ul li.current-step span {
+  color: #FE5F1E;
+}
+
+.status-box ul li.current-step::before {
+  background-color: #FE5F1E;
 }

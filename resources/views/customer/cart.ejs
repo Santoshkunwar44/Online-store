@@ -30,30 +30,34 @@
           >
           <span class="text-2xl font-bold">: ₹  <%= session.cart.totalPrice    %></span>
         </div>
-        <form class="card-form" action="" class="my-5">
+        <% if(user){ %>
+        <form class="card-form" action="/order" method="post" class="my-5">
           <input
             class="border border-grey-400 w-1/2 py-4 px-4 mt-3"
             type="text"
             placeholder="Address"
+            name="address"
             required
           />
           <input
             class="border border-grey-400 w-1/2 py-4 px-4 mt-3"
-            type="text"
-            placeholder="Phone"
+            type="phone"
+            placeholder="number"
+            name="phone"
             required
           />
           <div><button class="order-btn py-2 px-5 mt-4">Order</button></div>
+            <%}else{ %>
+  
+              
+     
         </form>
-        <!-- <a href="" class="btn-primary inline-block cursor-pointer px-6 py-2 mt-5"
-          >Login to continue</a
-        > -->
+        <a href="/login" class="btn-primary inline-block cursor-pointer px-6 py-2 mt-5">Login to continue</a>
+        <% } %> 
       </div>
     </div>
   </section>
  <% }else{ %>
- 
-
 <section class="empty-cart py-10">
   <div class="contianer mx-auto text-center ">
     <h1 class="text-3xl font-bold mb-2">Cart Empty</h1>

@@ -2,17 +2,16 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const User = require("../../../model/user");
 const LoginController = () => {
+  const getRedirectUrl=(req)=>{
+    return req.user.role==="admin" ? "/admin/orders" : "/customer/orders"
+  }
   return {
     login: (req, res) => res.render("auth/login"),
 
-
     loginPost: (req, res, next) => {
-
-      const {email,password} =req.body;
-      if(!email || !password ){
+      const { email, password } = req.body;
+      if (!email || !password) {
         req.flash("error ", "Missing Credentials..");
-
-        
       }
 
       passport.authenticate("local", (err, user, info) => {
@@ -29,7 +28,7 @@ const LoginController = () => {
             req.flash("error", info.message);
             return res.err;
           }
-          return res.redirect("/");
+          return res.redirect(getRedirectUrl(req));
         });
       })(req, res, next);
     },
@@ -72,7 +71,7 @@ const LoginController = () => {
     },
     logout: (req, res) => {
       req.logout();
-       return res.redirect("/login");
+      return res.redirect("/login");
     },
   };
 };
